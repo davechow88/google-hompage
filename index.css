@@ -1,99 +1,178 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 /* Style the links inside the navigation bar */  
   /* Right-aligned section inside the top navigation */
+  .head{
+    font-family: arial, sans-serif;
+    font-size: small;
+    color: black;
+  }
+
+  .topnav-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 5px;
+    font-size: small;
+  }
+  
   .topnav-right a {
-    float: right;
-    margin-left: 10px;
-    margin-right: auto;
     opacity: 0.75;
+    margin-right: 5px;
+    font-family: arial, sans-serif;
+    text-decoration: none;
+    color: black;
   }
   
   /* Move the App picture to the right of the page */
   .topnav-right img {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: auto;
     width: 20px;
-    vertical-align: top;
-    float: right;
-  }
-  
-  .name {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: auto;
-    width: 10%;
-    vertical-align: top;
+    margin-right: 5px;
   }
   
   /* Add in Google Label */
   
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  
-  }
-  
   body {
     text-align: center;
+    font-family: arial, sans-serif;
   }
-  
-  /* Style the search field */
-  
-  .search input[type=text] {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    color: rgba(0, 0, 0, 087);
-    word-wrap: break-word;
-    outline: none;
-    flex: 100%;
-    text-align: center;
-    display: inline-block;
-    width: 20%;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-  
-  /* Style the magnifying glass */
-  
-  .mag {
-    margin: 4px;
-    width: 20px;
-    vertical-align: middle;
-  
+
+  .logo {
+    width: 272px;
+    padding-top: 130px;
   }
-  
-  /* Style the Microphone */
-  
-  .mic {
-    margin: 1px;
-    width: 18px;
-    vertical-align: middle;
-  }
-  
-  /* Style the Search Box */
-  
-  .search {
+  .search{
     background: #fff;
     display: flex;
     border: 1px solid #dfe1e5;
     box-shadow: none;
     border-radius: 24px;
     z-index: 3;
-    height: 34px;
+    height: 44px;
     margin: 0 auto;
     width: 482px;
-    margin-top: 20px;
-  
   }
-  
-  input[type="submit"] {
-    background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+
+  .mg {
+    display: flex;
+    align-items: center;
+    padding-right: 13px;
+    fill: #dfe1e5;
+    height: 40px;
+    width: 40px;
+    margin-inline-start: 16px;
+  }
+
+  .search input[type=text] {
+    /* box-sizing: border-box;
+    padding-inline-start: 20px;
+    position: relative;
+    width: 561px;
+    height: 44px;
+    border-radius: 30px; */
+    display: flex;
+    width: 561px;
+    
+    border: transparent;
+    }
+
+  .micicon{
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgyNHYyNEgweiIvPjxwYXRoIGZpbGw9IiM0Mjg1RjQiIGQ9Ik0xMiAxNWMxLjY2IDAgMi45OS0xLjM0IDIuOTktM0wxNSA1YzAtMS42Ni0xLjM0LTMtMy0zUzkgMy4zNCA5IDV2N2MwIDEuNjYgMS4zNCAzIDMgM3oiLz48cGF0aCBmaWxsPSIjMzRBODUzIiBkPSJNMTEgMTguOTJoMlYyMmgtMnoiLz48cGF0aCBmaWxsPSIjRjRCNDAwIiBkPSJNNyAxMkg1YzAgMS45My43OCAzLjY4IDIuMDUgNC45NWwxLjQxLTEuNDFDNy41NiAxNC42MyA3IDEzLjM4IDcgMTJ6Ii8+PHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTEyIDE3Yy0xLjM4IDAtMi42My0uNTYtMy41NC0xLjQ3bC0xLjQxIDEuNDFBNi45OSA2Ljk5IDAgMCAwIDEyLjAxIDE5YzMuODcgMCA2Ljk4LTMuMTQgNi45OC03aC0yYzAgMi43Ni0yLjIzIDUtNC45OSA1eiIvPjwvc3ZnPg==) no-repeat center;
+    background-size: 21px 21px;
+    cursor: pointer;
+    margin-inline-end: 16px;
+    width: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border: transparent;
+    padding: 0 8px;
+    line-height: 44px;
+  }
+
+  .buttons {
+    padding-top: 18px;
+  }
+
+  .gs {
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
     background-color: #f2f2f2;
     border: 1px solid #f2f2f2;
     border-radius: 4px;
     color: #5F6368;
-    font-family: arial, sans-serif;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .fl {
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
     font-size: 14px;
     margin: 11px 4px;
     padding: 0 16px;
@@ -105,32 +184,42 @@
     user-select: none;
   }
   
-  
-  footer {
+  .GOI {
+    display: inline-block;
+    line-height: 28px;
+    font-size: small;
+  }
+
+  .footer{
     position: fixed;
-    left: 0;
-    bottom: 0;
+    z-index: 104;
     width: 100%;
-    background-color: #f2f2f2;
-    line-height: 40px;
-  
-  }
-  
-  .foot-left a {
-    float: left;
-    margin-left: 15px;
+    bottom: 0;
+    font-family: arial, sans-serif;
     color: black;
   }
-  
-  .foot-right a {
-    float: right;
-    margin-right: 15px;
-    color: black;
-  }
-  a:link {
+
+  a{
+    font-family: arial, sans-serif;
+    font-size: small;
     text-decoration: none;
+    color: black;
+}
+
+  .foot1 {
+    text-align: left;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #e4e4e4;
+    height: 35px;
   }
-  
-  a:hover {
-    text-decoration: underline;
+
+  .foot2 {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #e4e4e4;
+    height: 35px;
+    text-align: left;
+  }
+
+  .foot2-right{
+    float: right;
   }
